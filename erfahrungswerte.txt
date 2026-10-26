@@ -1,8 +1,8 @@
 # Klein_Method Schwarmwissen - automatisch erzeugt, nicht von Hand bearbeiten
-# Berichte gueltig 4, ungueltig 0, gezaehlt (DONE, nicht verworfen, Grenzwert erreicht) 4
+# Berichte gueltig 5, ungueltig 0, gezaehlt (DONE, nicht verworfen, Grenzwert erreicht) 5
 # Typ|Klasse|Komponente|Projekt=Wert (Einheit wie in Klein_Method: mgon/mm/ppm; Punktwerte mm)
-HORIZONTAL_DIRECTION_LOG_POST|ELEKTRONISCH|a|f3a6f574f3ce=0.5817241558976807
+HORIZONTAL_DIRECTION_LOG_POST|ELEKTRONISCH|a|f3a6f574f3ce=0.5
 HORIZONTAL_DIRECTION_LOG_POST|ELEKTRONISCH|c|f3a6f574f3ce=0.5
-HORIZONTAL_DISTANCE_LOG_POST|ELEKTRONISCH|a|f3a6f574f3ce=0.5691750474542718
-HORIZONTAL_DISTANCE_LOG_POST|ELEKTRONISCH|c|f3a6f574f3ce=0.7688181600826637
+HORIZONTAL_DISTANCE_LOG_POST|ELEKTRONISCH|a|f3a6f574f3ce=0.5
+HORIZONTAL_DISTANCE_LOG_POST|ELEKTRONISCH|c|f3a6f574f3ce=0.5
 PUNKTMEDIAN_2D|SONSTIGE|s|f3a6f574f3ce=1.267761259468374
