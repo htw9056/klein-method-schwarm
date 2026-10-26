@@ -1,0 +1,48 @@
+# Klein_Method Schwarmwissen - V0.396
+# Sammelt die Laufberichte (Issues) und berechnet erfahrungswerte.txt.
+name: Schwarm-Auswertung
+
+on:
+  issues:
+    types: [opened, edited, reopened, closed, labeled, unlabeled]
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: schwarm-auswertung
+  cancel-in-progress: false
+
+jobs:
+  auswerten:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository holen
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Erfahrungswerte berechnen
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+        run: python scripts/auswerten.py
+
+      - name: Ergebnis speichern
+        run: |
+          git config user.name "klein-method-schwarm-action"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add erfahrungswerte.txt
+          if git diff --cached --quiet; then
+            echo "Keine Aenderung."
+          else
+            git commit -m "Erfahrungswerte aktualisiert"
+            git push
+          fi
